@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
-import 'app_screen/menu_screen.dart';
+import 'model/login.dart';
+import 'model/signin.dart';
+
 
 void main() {
   runApp(const MyApp());
 }
 
-// ส่วนของ Stateless widget
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'First Flutter App',
-      // home: FirstScreen(),
-      initialRoute: '/menu', // สามารถใช้ home แทนได้
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const Login(), // เปลี่ยนหน้าหลักที่นี่
       routes: {
-        '/menu': (context) => const MenuScreen(),
+        '/signin': (context) => SigninPage(), // กำหนดเส้นทางที่นี่
       },
     );
   }
